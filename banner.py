@@ -39,7 +39,7 @@ def print_hostname():
 def print_release():
     """ print Release Information """
     if platform.system() == "Linux":
-        if os.path.exixts('/etc/system-release'):
+        if os.path.exists('/etc/system-release'):
             with open('/etc/system-release', 'r') as sysrel:
                 release = sysrel.read()
                 release = release.replace('\n', '')
