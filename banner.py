@@ -39,7 +39,13 @@ def print_hostname():
 def print_release():
     """ print Release Information """
     if platform.system() == "Linux":
-        print_padded_string('Release: ' + " ".join(distro.linux_distribution()))
+        if os.path.exixts('/etc/system-release'):
+            with open('/etc/system-release', 'r') as sysrel:
+                release = sysrel.read()
+                release = release.replace('\n', '')
+            print_padded_string('Release: ' + release)
+        else:
+            print_padded_string('Release: ' + " ".join(distro.linux_distribution()))
     elif platform.system() == "Darwin":
         print_padded_string('Release: macOS ' + platform.mac_ver()[0])
     else:
