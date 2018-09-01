@@ -2,6 +2,7 @@
 """ Module to display banner on login """
 from __future__ import print_function
 import os
+import sys
 import platform
 import subprocess
 from util import distro
@@ -94,6 +95,7 @@ def print_kernel_info(mode=0):
 
 
 def print_line(func, parm=None):
+    """ Print Line """
 
     print_vert_line()
     if parm is None:
@@ -105,10 +107,14 @@ def print_line(func, parm=None):
 
 def main():
     """ Module entrypoint """
+
+    if sys.version_info < (2, 7, 0):
+        print("Python Version must be at least 2.7!")
+        sys.exit(1)
+
     _ = os.system("clear")
 
     print_horizontal_line()
-    
     print_line(print_hostname)
     print_line(print_release)
     print_line(print_kernel_info, 0)
