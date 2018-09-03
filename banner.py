@@ -89,6 +89,8 @@ def print_kernel_info(mode=0):
             cmd = ['uname', '-v']
             stdout = subprocess.check_output(cmd)
             version = stdout.replace('\n', '')
+            stdout = split_week(stdout, '|')
+            stdout = stdout.split('|')[0]
             print_padded_string("Build: " + version)
         if mode == 2:
             cmd = ['uname', '-v']
