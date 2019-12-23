@@ -1,0 +1,17 @@
+[[package]]
+category = "main"
+description = "Distro - an OS platform information API"
+name = "distro"
+optional = false
+python-versions = "*"
+version = "1.4.0"
+
+[metadata]
+content-hash = "5ce34b3bda087532910d5b376291735976b18333c7008753739e13d162f59f3a"
+python-versions = "^3.6"
+
+[metadata.files]
+distro = [
+    {file = "distro-1.4.0-py2.py3-none-any.whl", hash = "sha256:eedf82a470ebe7d010f1872c17237c79ab04097948800029994fa458e52fb4b4"},
+    {file = "distro-1.4.0.tar.gz", hash = "sha256:362dde65d846d23baee4b5c058c8586f219b5a54be1cf5fc6ff55c4578392f57"},
+]
